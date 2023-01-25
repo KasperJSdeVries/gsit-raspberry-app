@@ -4,6 +4,7 @@
         "beforeBuildCommand": "yarn build",
         "devPath": "http://localhost:1420",
         "distDir": "../src",
+        "runner": "cross",
         "withGlobalTauri": true
     },
     "package": {
@@ -32,7 +33,7 @@
                 "icons/icon.icns",
                 "icons/icon.ico"
             ],
-            "identifier": "com.tauri.dev",
+            "identifier": "com.tauri.build",
             "longDescription": "",
             "macOS": {
                 "entitlements": null,
