@@ -1,13 +1,17 @@
 {
   "name": "gsit-raspberry-ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "init:armv7": "docker build . -t rust_cross_compile/armv7 -f Dockerfile.armv7",
+    "init:arm64": "docker build . -t rust_cross_compile/arm64 -f Dockerfile.arm64",
+    "build:armv7": "yarn build && docker run --rm -ti -v %cd%:/app rust_cross_compile/armv7",
+  	"build:arm64": "yarn build && docker run --rm -ti -v %cd%:/app rust_cross_compile/arm64"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.1.0"

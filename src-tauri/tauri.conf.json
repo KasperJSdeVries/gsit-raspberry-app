@@ -1,31 +1,22 @@
 {
     "build": {
-        "beforeDevCommand": "yarn dev",
-        "beforeBuildCommand": "yarn build",
+        "beforeDevCommand": "",
+        "beforeBuildCommand": "",
         "devPath": "http://localhost:1420",
-        "distDir": "../src",
-        "runner": "cross",
-        "withGlobalTauri": true
+        "distDir": "../dist"
     },
     "package": {
         "productName": "gsit-raspberry-ui",
-        "version": "0.0.0"
+        "version": "0.0.1"
     },
     "tauri": {
         "allowlist": {
-            "all": true,
-            "os": {
-                "all": true
-            }
+            "all": true
         },
         "bundle": {
             "active": true,
-            "category": "DeveloperTool",
-            "copyright": "",
-            "deb": {
-                "depends": []
-            },
-            "externalBin": [],
+			"targets": ["deb"],
+            "identifier": "com.tauri.build",
             "icon": [
                 "icons/32x32.png",
                 "icons/128x128.png",
@@ -33,23 +24,12 @@
                 "icons/icon.icns",
                 "icons/icon.ico"
             ],
-            "identifier": "com.tauri.build",
-            "longDescription": "",
-            "macOS": {
-                "entitlements": null,
-                "exceptionDomain": "",
-                "frameworks": [],
-                "providerShortName": null,
-                "signingIdentity": null
-            },
             "resources": [],
+            "externalBin": [],
+            "copyright": "",
+            "category": "DeveloperTool",
             "shortDescription": "",
-            "targets": "all",
-            "windows": {
-                "certificateThumbprint": null,
-                "digestAlgorithm": "sha256",
-                "timestampUrl": ""
-            }
+            "longDescription": ""
         },
         "security": {
             "csp": null
@@ -60,7 +40,7 @@
         "windows": [
             {
                 "fullscreen": true,
-                "resizable": false,
+                "resizable": true,
                 "title": "gsit-raspberry-ui"
             }
         ]
